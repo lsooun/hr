@@ -12,9 +12,6 @@
 */
 
 /*Login*/
-Route::get('/test', function (){
-    return language_data('Training');
-});
 Route::get('/', 'UserController@login');
 Route::post('user/get-login', 'UserController@getLogin');
 
