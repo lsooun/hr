@@ -91,7 +91,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => 'base64:iPyYKCRrU1p2wleTmRLOn3Mx+ri0Yri4MiIB44BhZBc=',
 
     'cipher' => 'AES-256-CBC',
 
@@ -156,6 +156,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*Custom Providers*/
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        Barryvdh\Snappy\ServiceProvider::class,
+
     ],
 
     /*
@@ -202,6 +207,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        /*Custom Alias*/
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+        'WkPdf'=> Barryvdh\Snappy\Facades\SnappyPdf::class,
     ],
 
 ];
