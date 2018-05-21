@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+
+class CreateSysTicketFilesTable extends Migration {
+
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('sys_ticket_files', function(Blueprint $table)
+		{
+			$table->increments('id');
+			$table->integer('ticket_id');
+			$table->integer('emp_id');
+			$table->text('file_title', 65535);
+			$table->string('file_size', 20);
+			$table->text('file', 65535);
+			$table->timestamps();
+		});
+	}
+
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::drop('sys_ticket_files');
+	}
+
+}
